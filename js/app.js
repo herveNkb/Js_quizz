@@ -13,7 +13,7 @@ function handleSubmit(event) {
 
   const radioButtons = document.querySelectorAll("input[type='radio']:checked");
 
-  // Compare les valeurs des boutons choisis avec le tableau "responses"
+  // Compare les valeurs des boutons radio choisies avec le tableau "responses"
   // et renvoie true ou false selon le résultat.
   radioButtons.forEach((radioButtons, index) => {
     if (radioButtons.value === responses[index]) {
@@ -27,7 +27,6 @@ function handleSubmit(event) {
   addColors(results); // Ajoute les couleurs par rapport aux résultats
 }
 
-// Affichage dans le DOM
 const titleResult = document.querySelector(".results h2");
 const markResult = document.querySelector(".mark");
 const helpResult = document.querySelector(".help");
