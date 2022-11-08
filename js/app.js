@@ -23,7 +23,8 @@ function handleSubmit(event) {
     }
   });
 
-  showResults(results);
+  showResults(results); // Montre les résultats
+  addColors(results); // Ajoute les couleurs par rapport aux résultats
 }
 
 // Affichage dans le DOM
@@ -90,3 +91,52 @@ function showResults(results) {
       titleResult.textContent = "Wops, cas innatendu.";
   }
 }
+
+
+// Colorise les questions selon le choix de réponse
+const questions = document.querySelectorAll(".question-block");
+
+function addColors(results) {
+  results.forEach((responses, index) => {
+    if (results[index]) {
+      questions[index].style.backgroundImage = "linear-gradient(to right, #a8ff78, #78ffd6)";
+    } else {
+      questions[index].style.backgroundImage = "linear-gradient(to right, #f5567b, #fd674c)";
+    }
+  })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
