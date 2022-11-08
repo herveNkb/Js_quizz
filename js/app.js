@@ -106,6 +106,21 @@ function addColors(results) {
 }
 
 
+// 'reset' la couleur quand on modifie une réponse
+const radioInputs = document.querySelectorAll("input[type='radio']");
+
+radioInputs.forEach(radioInput => radioInput.addEventListener("input", resetColor));
+
+function resetColor(event) {
+  // Permet de cibler l'index de quelle question a été modifiée
+  const index = event.target.getAttribute("name").slice(1) -1;
+  // Indique quel est le bloc qui a été modifié grâce à l'index 
+  const parentQuestionBlock = questions[index];
+  
+  parentQuestionBlock.style.backgroundImage = "none";
+  parentQuestionBlock.style.backgroundColor = "#f1f1f1";
+}
+
 
 
 
